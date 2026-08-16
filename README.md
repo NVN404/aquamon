@@ -42,6 +42,39 @@
 
 ---
 
+## 🖼️ Application Walkthrough & Visual Tour
+
+### 1. 📊 Residential Apartment Node Dashboard
+![Apartment Water Accounting Dashboard](assets/screenshots/dashboard.png)
+* **Real-Time Water Accounting**: Links physical ESP32 pulse meters (`AQUAMON-UNIT-101`) to resident EVM wallets on Monad.
+* **Daily Quota Preservation Bar**: Visualizes real-time water consumed (`121.51 / 200.00 L`) vs water preserved (`+78.49 Liters`).
+* **Anti-Exploit Daily Epoch Yield**: Accrues `$AQMON` rewards strictly for water preserved below baseline. Rewards remain locked as *In Progress* until daily midnight auditing to prevent midday consumption gaming.
+* **Live Telemetry Ledger**: Displays incoming hardware pulses, flow classification tags (`CONSERVING`, `NORMAL`, `HIGH_SURGE`), and clickable Monad block explorer transaction receipts (`↗`).
+
+---
+
+### 2. 🏆 Building Conservation Leaderboard
+![Building Conservation Leaderboard](assets/screenshots/leaderboard.png)
+* **Live Apartment Standings**: Recalculates resident rankings, daily streaks, and quota preservation percentages on every Monad block.
+* **Cluster Level Insights**: Aggregates total water preserved across the entire complex (`878.49 Liters saved today`) against baseline capacity.
+* **Parallel Execution Simulator**: Interactive triggers simulate simultaneous telemetry ingestion across multiple apartment units (`Unit 101` through `808`), showcasing Monad's 10,000 TPS parallel EVM throughput.
+
+---
+
+### 3. 💧 AquaMon Public Goods Impact Fund
+![AquaMon Impact Fund](assets/screenshots/impact_fund.png)
+* **Direct On-Chain Philanthropy**: Enables eco-conscious residents to donate earned `$AQMON` credits directly to verified non-profit water trusts (*Water.org India*, *Urban Wetland Rejuvenation Trust*, *Rainwater Harvesting Alliance*).
+* **Tangible Environmental Impact**: Every 1 `$AQMON` transferred provisions 1,000 Liters of clean drinking water to underserved municipal facilities.
+
+---
+
+### 4. 🏢 Corporate ESG & Water Positive Retirement Portal
+![Corporate ESG Portal](assets/screenshots/corporate_esg.png)
+* **Institutional CSR Offsets**: Corporations acquire and permanently retire `$AQMON` water benefit certificates to fulfill mandatory ESG disclosures (GRI 303 / CDP Water Security).
+* **Cryptographic Retirement Proof**: Retired credits are permanently burned on Monad, generating immutable on-chain certificates with verifiable burn transaction hashes.
+
+---
+
 ## 🏗️ End-to-End System Architecture
 
 ```
