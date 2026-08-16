@@ -75,6 +75,14 @@
 
 ---
 
+### 5. 🕹️ Interactive ESP32 Smart Water Meter Hardware (Wokwi Simulation)
+![Wokwi ESP32 Hardware Simulation](assets/screenshots/wokwi_hardware.png)
+* **Live Hardware Emulation**: ESP32 microcontroller running Arduino C++ firmware paired with an I2C 20x4 LCD screen and a linear potentiometer slide valve.
+* **Instant State Feedback**: LCD displays live telemetry (`METER: UNIT-101`, `Flow: 0.31 L/s`, `Total: 26.00 L`, `Monad: ATTESTING..` $\rightarrow$ `Monad: ATTESTED OK`).
+* **Sub-Second Transmission**: Streams encrypted pulse data every 800ms directly to the AquaMon Relayer over an active HTTPS tunnel.
+
+---
+
 ## 🏗️ End-to-End System Architecture
 
 ```
