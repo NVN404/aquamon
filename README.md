@@ -112,6 +112,44 @@
 
 ---
 
+## 🔐 Environment Variables & Secret Configuration
+
+Copy the provided `.env.example` templates to `.env` in each module:
+
+### 1. Frontend (`frontend/.env.local`)
+```env
+# Para SDK Web3 Authentication API Key
+NEXT_PUBLIC_PARA_API_KEY=beta_304e92ef208bef18c1122e3f3eb6a177
+
+# AquaMon Verified Smart Contract on Monad Testnet
+NEXT_PUBLIC_CONTRACT_ADDRESS=0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1
+
+# AquaMon Verified Smart Contract on Monad Mainnet
+NEXT_PUBLIC_MAINNET_CONTRACT_ADDRESS=0x89afB0868412194E65834b9029918Cfb4c6aB177
+
+# Monad Public RPC Endpoint
+NEXT_PUBLIC_MONAD_RPC_URL=https://testnet-rpc.monad.xyz
+
+# AquaMon Relayer Gateway URL (Localhost or active HTTPS Tunnel)
+NEXT_PUBLIC_RELAYER_URL=http://localhost:3000
+```
+
+### 2. Relayer Proxy Engine (`relayer/.env`)
+```env
+PORT=3000
+MONAD_RPC_URL=https://testnet-rpc.monad.xyz
+PRIVATE_KEY=your_relayer_sponsor_private_key_here
+CONTRACT_ADDRESS=0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1
+```
+
+### 3. Multi-Unit IoT Simulator (`iot-simulator/.env`)
+```env
+RELAYER_URL=http://localhost:3000/api/telemetry
+PING_INTERVAL_MS=2500
+```
+
+---
+
 ## 📐 Tokenomics & Conservation Math
 
 AquaMon conforms to the internationally recognized **Gold Standard Water Benefit Certificate** framework:
