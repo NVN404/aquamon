@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { useAccount } from 'wagmi';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
@@ -12,15 +13,10 @@ import DonationTab from '../components/DonationTab';
 import FaqTab from '../components/FaqTab';
 import { RELAYER_URL, JALPOOL_ADDRESS } from '../lib/contract';
 
-export default function HomePage() {
-  const [mounted, setMounted] = useState(false);
+function MainApp() {
   const { isConnected } = useAccount();
   const [activeTab, setActiveTab] = useState('landing');
   const [relayerStats, setRelayerStats] = useState<any>(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Auto-switch to dashboard when user connects their wallet
   useEffect(() => {
@@ -50,17 +46,6 @@ export default function HomePage() {
     const interval = setInterval(fetchRelayerStats, 3000);
     return () => clearInterval(interval);
   }, []);
-
-  if (!mounted) {
-    return (
-      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FBFBFA', color: '#111110', fontFamily: 'sans-serif' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#2D5A30' }} />
-          <span>Loading AquaMon Protocol...</span>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', backgroundColor: 'var(--bg-canvas)' }}>
@@ -143,3 +128,15 @@ export default function HomePage() {
     </div>
   );
 }
+
+export default dynamic(() => Promise.resolve(MainApp), {
+  ssr: false,
+  loading: () => (
+    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#FBFBFA', color: '#111110', fontFamily: 'sans-serif' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#2D5A30' }} />
+        <span>Loading AquaMon Protocol...</span>
+      </div>
+    </div>
+  ),
+});
