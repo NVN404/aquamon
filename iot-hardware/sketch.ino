@@ -8,7 +8,7 @@ LiquidCrystal_I2C lcd(0x27, 20, 4);
 
 const char* ssid = "Wokwi-GUEST"; 
 const char* password = "";        
-const char* relayerUrl = "https://fxtik-106-51-70-43.free.pinggy.net/api/telemetry"; // Active Live Tunnel
+const char* relayerUrl = "https://chfut-106-51-70-43.free.pinggy.net/api/telemetry"; // Active Live Tunnel
 
 const int VALVE_PIN = 34; // Slider potentiometer pin
 float totalLiters = 0.0;
