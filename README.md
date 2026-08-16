@@ -2,21 +2,22 @@
 
 > **The Decentralized Physical Infrastructure Network (DePIN) turning residential water conservation into Gold Standard Water Benefit Certificates ($AQMON) with parallel EVM consensus on Monad.**
 
+[![Monad Mainnet](https://img.shields.io/badge/Network-Monad%20Mainnet-836EF9?style=flat-square)](https://monadscan.com/)
 [![Monad Testnet](https://img.shields.io/badge/Network-Monad%20Testnet%20(10143)-836EF9?style=flat-square)](https://testnet.monadexplorer.com/)
-[![Smart Contract](https://img.shields.io/badge/Contract-0xCce77B...98F9E1-00F5D4?style=flat-square)](https://testnet.monadexplorer.com/address/0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 ---
 
 ## 📌 Executive Summary & Pitch Checklist
 
-| Pitch Item | Submission Link / Parameter |
+| Pitch Item | Monad Mainnet & Testnet Deployments |
 |---|---|
 | **Protocol Name** | **AquaMon** |
 | **Token Symbol** | **`$AQMON`** (ERC-20 on Monad) |
-| **Verified Contract Address** | [`0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1`](https://testnet.monadexplorer.com/address/0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1) |
+| **🔥 Monad Mainnet Contract** | [`0x89afB0868412194E65834b9029918Cfb4c6aB177`](https://monadscan.com/address/0x89afB0868412194E65834b9029918Cfb4c6aB177) |
+| **⚡ Monad Testnet Contract** | [`0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1`](https://testnet.monadexplorer.com/address/0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1) |
 | **Monad Explorer Contract** | [View on MonadVision / MonadExplorer ↗](https://testnet.monadvision.com/address/0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1) |
-| **Network & Chain ID** | **Monad Testnet (Chain ID: `10143`)** |
+| **Networks & Chain IDs** | **Monad Mainnet** & **Monad Testnet (Chain ID: `10143`)** |
 | **Live Web Application** | `http://localhost:3001` *(or deployed production link)* |
 | **Relayer Proxy Gateway** | `http://localhost:3000` (`/api/telemetry`, `/api/stats`, `/api/pair-device`) |
 | **Standard Compliance** | **Gold Standard Water Benefit Certificate (1 m³ / 1,000 L saved = 1 $AQMON)** |
@@ -55,8 +56,8 @@
                 │  recordTelemetry(residentWallet, litersScaled)
                 ▼
 ┌────────────────────────────────┐
-│   Monad Smart Contract         │  • Contract: AquaMonPool.sol (0xCce7...F9E1)
-│   (Chain ID: 10143)            │  • Sub-800ms EVM execution
+│   Monad Smart Contract         │  • Mainnet: 0x89afB0868412194E65834b9029918Cfb4c6aB177
+│   (Mainnet & Testnet)          │  • Testnet: 0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1
 │                                │  • Tracks cumulative water & audits 200L quota
 └───────────────┬────────────────┘
                 │  getResidentStats() / claimTokens() / burn()
@@ -96,8 +97,8 @@ $$\text{Reward Yield} = \frac{\text{Water Saved (Liters)}}{1,000} \times 1\text{
 
 ### 1. Clone the Repository & Install Dependencies
 ```bash
-git clone https://github.com/your-username/aquamon-monad.git
-cd aquamon-monad
+git clone https://github.com/NVN404/aquamon.git
+cd aquamon
 
 # Install dependencies across all packages
 cd relayer && npm install && cd ..
@@ -165,8 +166,9 @@ npm start
 
 ## 📜 Smart Contract Specification (`AquaMonPool.sol`)
 
-The `AquaMonPool.sol` smart contract is deployed and verified on Monad Testnet at address:
-**[`0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1`](https://testnet.monadexplorer.com/address/0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1)**
+### Verified Contract Deployments:
+* **🔥 Monad Mainnet**: **[`0x89afB0868412194E65834b9029918Cfb4c6aB177`](https://monadscan.com/address/0x89afB0868412194E65834b9029918Cfb4c6aB177)**
+* **⚡ Monad Testnet**: **[`0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1`](https://testnet.monadexplorer.com/address/0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1)**
 
 ### Core Functions:
 1. **`recordTelemetry(address resident, uint256 litersScaled)`**:
