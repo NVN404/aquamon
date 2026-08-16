@@ -112,10 +112,9 @@ export default function DashboardTab({ relayerStats, onRefreshRelayer }: Dashboa
     }
   };
 
-  // Extract high-precision volume from live relayer stream or fallback to onchain
+  // Find relayer stream that strictly matches the connected wallet
   const activeDeviceData = relayerStats?.devices?.find((d: any) => 
-    d.deviceId === assignedMeterId || 
-    (d.residentWallet && targetAddress && d.residentWallet.toLowerCase() === targetAddress.toLowerCase())
+    d.residentWallet && targetAddress && d.residentWallet.toLowerCase() === targetAddress.toLowerCase()
   );
 
   const rawUsage = activeDeviceData?.totalLiters !== undefined 
@@ -374,7 +373,7 @@ export default function DashboardTab({ relayerStats, onRefreshRelayer }: Dashboa
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span className={log.status === 'CONSERVING' ? 'badge-tag badge-conserving' : 'badge-tag badge-neutral'}>
+                    <span className={log.status === 'CONSERVING' ? 'badge-tag badge-conserving' : (log.status === 'HIGH_SURGE' ? 'badge-tag badge-alert' : 'badge-tag badge-neutral')}>
                       {log.status}
                     </span>
                     {log.txHash && (
