@@ -4,6 +4,7 @@
 
 [![Monad Mainnet](https://img.shields.io/badge/Network-Monad%20Mainnet-836EF9?style=flat-square)](https://monadscan.com/)
 [![Monad Testnet](https://img.shields.io/badge/Network-Monad%20Testnet%20(10143)-836EF9?style=flat-square)](https://testnet.monadexplorer.com/)
+[![Vercel Deployment](https://img.shields.io/badge/Live%20DApp-aquamon--alpha.vercel.app-000000?style=flat-square&logo=vercel)](https://aquamon-alpha.vercel.app/)
 [![Wokwi Simulator](https://img.shields.io/badge/IoT%20Hardware-Wokwi%20Live%20Simulation-00F5D4?style=flat-square)](https://wokwi.com/projects/472508191464530945)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
@@ -18,9 +19,9 @@
 | **🔥 Monad Mainnet Contract** | [`0x89afB0868412194E65834b9029918Cfb4c6aB177`](https://monadscan.com/address/0x89afB0868412194E65834b9029918Cfb4c6aB177) |
 | **⚡ Monad Testnet Contract** | [`0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1`](https://testnet.monadexplorer.com/address/0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1) |
 | **Monad Explorer Contract** | [View on MonadVision / MonadExplorer ↗](https://testnet.monadvision.com/address/0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1) |
+| **🌐 Live Web Application** | [https://aquamon-alpha.vercel.app/ ↗](https://aquamon-alpha.vercel.app/) |
 | **🕹️ Live Wokwi Hardware Lab** | [https://wokwi.com/projects/472508191464530945 ↗](https://wokwi.com/projects/472508191464530945) |
 | **Networks & Chain IDs** | **Monad Mainnet** & **Monad Testnet (Chain ID: `10143`)** |
-| **Live Web Application** | `http://localhost:3001` *(or Vercel deployed link)* |
 | **Relayer Proxy Gateway** | `http://localhost:3000` (`/api/telemetry`, `/api/stats`, `/api/pair-device`) |
 | **Standard Compliance** | **Gold Standard Water Benefit Certificate (1 m³ / 1,000 L saved = 1 $AQMON)** |
 
@@ -107,6 +108,7 @@
                 ▼
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                          AquaMon Web Portal                              │
+│                (Live at https://aquamon-alpha.vercel.app/)               │
 │                                                                          │
 │  ┌───────────────────────────┐         ┌──────────────────────────────┐  │
 │  │   Resident Dashboard      │         │   Corporate ESG Portal       │  │
@@ -200,7 +202,7 @@ node server.js
 cd frontend
 npm run dev -- -p 3001
 ```
-Open **[http://localhost:3001](http://localhost:3001)** in your browser.
+Open **[http://localhost:3001](http://localhost:3001)** (or visit **[https://aquamon-alpha.vercel.app](https://aquamon-alpha.vercel.app)**).
 
 ---
 
@@ -239,7 +241,7 @@ NODE_PATH=./relayer/node_modules node scripts/live-monitor.js <YOUR_EVM_WALLET_A
 cd iot-simulator
 npm start
 ```
-* **Watch in Browser**: Open the **Leaderboard Tab** at **[http://localhost:3001](http://localhost:3001)** to watch apartment rankings, building totals, and streaks recalculate in parallel every second!
+* **Watch in Browser**: Open the **Leaderboard Tab** at **[https://aquamon-alpha.vercel.app](https://aquamon-alpha.vercel.app)** to watch apartment rankings, building totals, and streaks recalculate in parallel every second!
 
 ---
 
