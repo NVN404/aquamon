@@ -4,6 +4,7 @@
 
 [![Monad Mainnet](https://img.shields.io/badge/Network-Monad%20Mainnet-836EF9?style=flat-square)](https://monadscan.com/)
 [![Monad Testnet](https://img.shields.io/badge/Network-Monad%20Testnet%20(10143)-836EF9?style=flat-square)](https://testnet.monadexplorer.com/)
+[![Wokwi Simulator](https://img.shields.io/badge/IoT%20Hardware-Wokwi%20Live%20Simulation-00F5D4?style=flat-square)](https://wokwi.com/projects/472508191464530945)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 ---
@@ -17,8 +18,9 @@
 | **🔥 Monad Mainnet Contract** | [`0x89afB0868412194E65834b9029918Cfb4c6aB177`](https://monadscan.com/address/0x89afB0868412194E65834b9029918Cfb4c6aB177) |
 | **⚡ Monad Testnet Contract** | [`0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1`](https://testnet.monadexplorer.com/address/0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1) |
 | **Monad Explorer Contract** | [View on MonadVision / MonadExplorer ↗](https://testnet.monadvision.com/address/0xCce77B7F4b4D0628c4da66F7Aa9e2a78e598F9E1) |
+| **🕹️ Live Wokwi Hardware Lab** | [https://wokwi.com/projects/472508191464530945 ↗](https://wokwi.com/projects/472508191464530945) |
 | **Networks & Chain IDs** | **Monad Mainnet** & **Monad Testnet (Chain ID: `10143`)** |
-| **Live Web Application** | `http://localhost:3001` *(or deployed production link)* |
+| **Live Web Application** | `http://localhost:3001` *(or Vercel deployed link)* |
 | **Relayer Proxy Gateway** | `http://localhost:3000` (`/api/telemetry`, `/api/stats`, `/api/pair-device`) |
 | **Standard Compliance** | **Gold Standard Water Benefit Certificate (1 m³ / 1,000 L saved = 1 $AQMON)** |
 
@@ -134,10 +136,8 @@ You can demonstrate AquaMon in 3 distinct modes:
    ```bash
    NODE_PATH=./relayer/node_modules node scripts/listen-hardware.js
    ```
-2. **Open Wokwi**: [https://wokwi.com/projects/new/esp32](https://wokwi.com/projects/new/esp32)
-   - Paste code from `iot-hardware/sketch.ino`.
-   - Paste diagram from `iot-hardware/diagram.json`.
-   - Add library: `LiquidCrystal I2C`.
+2. **Open Direct Wokwi Project Simulation**:
+   👉 **[https://wokwi.com/projects/472508191464530945](https://wokwi.com/projects/472508191464530945)**
    - Click ▶️ **Play** and move the glider.
 3. **Watch**: The terminal instantly outputs the confirmed Monad transaction hashes and your browser dashboard increments live!
 
