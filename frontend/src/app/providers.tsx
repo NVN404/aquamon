@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useState, useEffect } from 'react';
 import '@getpara/react-sdk/styles.css';
 import { Environment, ParaProvider } from '@getpara/react-sdk';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -10,7 +11,16 @@ import type { ReactNode } from 'react';
 const queryClient = new QueryClient();
 
 export default function Providers({ children }: { children: ReactNode }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const paraApiKey = process.env.NEXT_PUBLIC_PARA_API_KEY || 'beta_304e92ef208bef18c1122e3f3eb6a177';
+
+  if (!mounted) {
+    return <>{children}</>;
+  }
 
   return (
     <QueryClientProvider client={queryClient}>
