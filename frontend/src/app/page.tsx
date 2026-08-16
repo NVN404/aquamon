@@ -90,7 +90,7 @@ function MainApp() {
                 />
               )}
 
-              {activeTab === 'impact' && (
+              {(activeTab === 'impact' || activeTab === 'donations') && (
                 <DonationTab />
               )}
 
