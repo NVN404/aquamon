@@ -10,11 +10,13 @@ import type { ReactNode } from 'react';
 const queryClient = new QueryClient();
 
 export default function Providers({ children }: { children: ReactNode }) {
+  const paraApiKey = process.env.NEXT_PUBLIC_PARA_API_KEY || 'beta_304e92ef208bef18c1122e3f3eb6a177';
+
   return (
     <QueryClientProvider client={queryClient}>
       <ParaProvider
         paraClientConfig={{
-          apiKey: process.env.NEXT_PUBLIC_PARA_API_KEY!,
+          apiKey: paraApiKey,
           env: Environment.BETA,
         }}
         config={{ appName: 'AquaMon — Water Conservation DePIN' }}
@@ -28,7 +30,7 @@ export default function Providers({ children }: { children: ReactNode }) {
             config: {
               chains: [monadTestnet],
               transports: {
-                [monadTestnet.id]: http('https://testnet-rpc.monad.xyz'),
+                [monadTestnet.id]: http(process.env.NEXT_PUBLIC_MONAD_RPC_URL || 'https://testnet-rpc.monad.xyz'),
               },
             },
           },
