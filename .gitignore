@@ -1,0 +1,24 @@
+# Agent Skills & Customizations
+.agents/
+.gemini/
+
+# Environment Files
+.env
+.env.local
+*.env
+
+# Node Modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build Outputs & Logs
+dist/
+build/
+.next/
+*.log
+
+# OS Metadata
+.DS_Store
+Thumbs.db

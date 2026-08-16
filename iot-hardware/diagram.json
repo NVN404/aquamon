@@ -1,0 +1,91 @@
+{
+    "version": 1,
+    "author": "Jal Protocol",
+    "editor": "wokwi",
+    "parts": [
+        {
+            "type": "board-esp32-devkit-c-v4",
+            "id": "esp",
+            "top": 0,
+            "left": -100,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-lcd2004",
+            "id": "lcd",
+            "top": -150,
+            "left": 80,
+            "attrs": {
+                "pins": "i2c"
+            }
+        },
+        {
+            "type": "wokwi-slide-potentiometer",
+            "id": "valve",
+            "top": 100,
+            "left": 100,
+            "attrs": {
+                "travelLength": "30"
+            }
+        }
+    ],
+    "connections": [
+        [
+            "esp:GND.1",
+            "lcd:GND",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "esp:3V3",
+            "lcd:VCC",
+            "red",
+            [
+                "v-20"
+            ]
+        ],
+        [
+            "esp:21",
+            "lcd:SDA",
+            "green",
+            [
+                "v-40"
+            ]
+        ],
+        [
+            "esp:22",
+            "lcd:SCL",
+            "blue",
+            [
+                "v-60"
+            ]
+        ],
+        [
+            "esp:GND.2",
+            "valve:GND",
+            "black",
+            [
+                "v20"
+            ]
+        ],
+        [
+            "esp:3V3",
+            "valve:VCC",
+            "red",
+            [
+                "v40"
+            ]
+        ],
+        [
+            "esp:34",
+            "valve:SIG",
+            "yellow",
+            [
+                "v60"
+            ]
+        ]
+    ],
+    "dependencies": {}
+}
